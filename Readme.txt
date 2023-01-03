@@ -1,4 +1,6 @@
-start : npm start
+start : 
+npm install
+npm start
 host :http://localhost:5000
 Player
 ---------------------------
