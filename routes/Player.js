@@ -60,7 +60,9 @@ router.post("/getone",async(req,res)=>{
 router.get("/getall",async(req,res)=>{
     try {
       const all =await Player.find({});
-      res.status(200).json(all);
+      res.status(200).json({
+        "Players": all
+      });
     } catch (error) {
       res.status(500).json(error);
     }

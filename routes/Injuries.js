@@ -29,7 +29,9 @@ router.post("/add",async(req,res)=>{
     
          ten = await Injury.find({player:playerid});
          
-         res.status(200).json(ten);
+         res.status(200).json({
+          "injuries": ten
+         });
   } catch (error) {
     res.status(500).json(error.message);
   }

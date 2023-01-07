@@ -26,7 +26,9 @@ router.post("/getten",async(req,res)=>{
     
          ten = await Quiz.find({}).limit(10);
          
-         res.status(200).json(ten);
+         res.status(200).json({
+          "quizs": ten
+        });
   } catch (error) {
     res.status(500).json(error.message);
   }
@@ -38,7 +40,11 @@ router.post("/getplayerten",async(req,res)=>{
     
          ten = await Quiz.find({player:playerid}).limit(10);
          
-         res.status(200).json(ten);
+         res.status(200).json(
+          {
+            "quizs": ten
+          }
+         );
   } catch (error) {
     res.status(500).json(error.message);
   }
