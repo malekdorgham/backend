@@ -6,6 +6,7 @@ const PlayerSchema = new mongoose.Schema(
     lastname: { type: String, required: true , trim: true},
     email: { type: String, required: true, trim: true , unique: true },
     date :{type : String , required: true },
+    category:{type: String , required: true},
     position :{type : String,  required: true},
     height :{type : String,  required: true},
     weight :{type : String,  required: true},
