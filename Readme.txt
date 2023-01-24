@@ -2,6 +2,21 @@ start :
 npm install
 npm start
 host :http://localhost:5000
+___________________________
+new
+___________________________
+*getpalayersbycategory:
+post req "localhost:5000/api/player/getplayersbycategory"
+body :{
+     
+      "category":"category"
+}
+----------
+*get passwords:
+get req "localhost:5000/api/player/categorypass"
+
+
+---------------------------
 Player
 ---------------------------
 *add paler:
@@ -12,6 +27,7 @@ body:{
       "lastname": "lastname",
       "email":"email",
       "date":"date",
+      "category":"category",
       "position":" position",
       "height": "height",
       "weight":"weight",
@@ -31,6 +47,7 @@ body:
       "lastname": "lastname",
       "email":"email",
       "date":"dat",
+      "category":"category"
       "position":" position",
       "height": "height",
       "weight":"weight",
@@ -44,6 +61,7 @@ body :
 {
     "playerid":"playerid"
 }
+
 *getall players:
 get req "http://localhost:5000/api/player/getall"
 
