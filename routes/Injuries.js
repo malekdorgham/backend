@@ -22,7 +22,19 @@ router.post("/add",async(req,res)=>{
       res.status(500).json(error.message)
     }
   });
-  router.post("/getall",async(req,res)=>{
+  router.get("/getall",async(req,res)=>{
+    try {
+      const all =await Injury.find({});
+      res.status(200).json({
+        "injuries": all
+      });
+    } catch (error) {
+      res.status(500).json(error);
+    }
+    
+  
+  });
+  router.post("/getbypalyerid",async(req,res)=>{
     const {playerid}=req.body;
     
   try {
@@ -35,5 +47,15 @@ router.post("/add",async(req,res)=>{
   } catch (error) {
     res.status(500).json(error.message);
   }
+  });
+  router.post("/delete",async(req,res)=>{
+    const {deletedid}=req.body;
+   
+    try {
+      const resultat = await Injury.findOneAndRemove({_id: req.body.deletedid});
+      res.status(200).json(resultat);
+    } catch (error) {
+      res.status(500).json(error.message);
+    }
   });
 module.exports=router;
