@@ -84,9 +84,37 @@ body:
       "urlimage":"urlimage",
       "comment":"comment"//not obligatoire
 }
-*getinjuries:
-post req "http://localhost:5000/api/injuries/getall"
+*get all injuries:
+Get req "http://localhost:5000/api/injuries/getall"
+
+*get injuries by playerid:
+Post req "localhost:5000/api/injuries/getbypalyerid"
+body:{
+
+    "playerid" : "Playerid"
+
+}
+
+*delete injury:
+post req "localhost:5000/api/injuries/delete"
 body:
 {
-    "playerid":"playerid"
+    "deletedid" :"injuryid"
+}
+----------------------------------
+PDF:
+____________________________
+
+*add pdf:
+post req "localhost:5000/api/pdfs/add"
+body :{
+    "pdfurl" : "pdfurl"
+}
+*get all pdfs:
+get req "localhost:5000/api/pdfs/getall"
+
+*delete pdf:
+post req "localhost:5000/api/pdfs/delete"
+body : {
+    "deletedid" : "pdfid"
 }
