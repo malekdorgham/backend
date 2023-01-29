@@ -19,9 +19,9 @@ router.post("/add",async(req,res)=>{
 router.get("/getall",async(req,res)=>{
     try {
       const all =await pdf.find({});
-      res.status(200).json({
-        "Pdfs": all
-      });
+      res.status(200).json(
+         all
+      );
     } catch (error) {
       res.status(500).json(error);
     }

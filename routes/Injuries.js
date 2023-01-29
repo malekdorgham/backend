@@ -25,9 +25,8 @@ router.post("/add",async(req,res)=>{
   router.get("/getall",async(req,res)=>{
     try {
       const all =await Injury.find({});
-      res.status(200).json({
-        "injuries": all
-      });
+      res.status(200).json( all
+      );
     } catch (error) {
       res.status(500).json(error);
     }
@@ -41,9 +40,9 @@ router.post("/add",async(req,res)=>{
     
          ten = await Injury.find({player:playerid});
          
-         res.status(200).json({
-          "injuries": ten
-         });
+         res.status(200).json(
+           ten
+         );
   } catch (error) {
     res.status(500).json(error.message);
   }
