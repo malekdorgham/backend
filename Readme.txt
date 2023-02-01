@@ -5,6 +5,11 @@ host :http://localhost:5000
 ___________________________
 new
 ___________________________
+*get one injury:
+post req "http://localhost:5000/api/injuries/getone"
+body :{
+"injuryid":"injuryid"
+}
 *getpalayersbycategory:
 post req "localhost:5000/api/player/getplayersbycategory"
 body :{
@@ -119,6 +124,7 @@ body:
 {
     "deletedid" :"injuryid"
 }
+
 ----------------------------------
 PDF:
 ____________________________
