@@ -132,7 +132,7 @@ ____________________________
 *add pdf:
 post req "localhost:5000/api/pdfs/add"
 body :{
-    "pdfurl" : "pdfurl"
+    'testimage:file
 }
 *get all pdfs:
 get req "localhost:5000/api/pdfs/getall"

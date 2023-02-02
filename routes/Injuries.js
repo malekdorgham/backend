@@ -47,6 +47,18 @@ router.post("/add",async(req,res)=>{
     res.status(500).json(error.message);
   }
   });
+  router.post("/getone",async(req,res)=>{
+    const {injuryid}=req.body;
+    
+  try {
+    
+         one = await Injury.find({_id:injuryid});
+         
+         res.status(200).json(one[0]);
+  } catch (error) {
+    res.status(500).json(error.message);
+  }
+  });
   router.post("/delete",async(req,res)=>{
     const {deletedid}=req.body;
    
